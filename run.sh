@@ -43,6 +43,9 @@ fi
 find $DESTINATION -type f -exec chmod 644 {} \;
 find $DESTINATION -type d -exec chmod 755 {} \;
 
+# Dar permisos de ejecución específicamente al entrypoint.sh
+chmod +x $DESTINATION/entrypoint.sh
+
 # Run Odoo
 docker-compose -f $DESTINATION/docker-compose.yml up -d
 
